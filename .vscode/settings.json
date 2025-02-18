@@ -1,0 +1,14 @@
+{
+	"editor.renderWhitespace": "boundary",
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	"files.autoSave": "onFocusChange",
+	"diffEditor.codeLens": true,
+	"editor.formatOnPaste": true,
+	"files.insertFinalNewline": true,
+	"files.trimFinalNewlines": true,
+	"files.trimTrailingWhitespace": true,
+	"workbench.commandPalette.preserveInput": true,
+	"scm.compactFolders": false,
+	"merge-conflict.autoNavigateNextConflict.enabled": true
+}
