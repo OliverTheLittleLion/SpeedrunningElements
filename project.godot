@@ -10,8 +10,9 @@ config_version=5
 
 [application]
 
-config/name="ArcadeTemplate"
+config/name="Speedrunning elements"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/fullsize=false
 config/icon="res://icon.svg"
 
 [display]
