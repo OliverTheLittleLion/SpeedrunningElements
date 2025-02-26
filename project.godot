@@ -10,9 +10,14 @@ config_version=5
 
 [application]
 
-config/name="ArcadeTemplate"
+config/name="Speedrunning elements"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/fullsize=false
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalTimer="*res://scripts/Timer.gd"
 
 [display]
 
@@ -452,5 +457,6 @@ quit={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
