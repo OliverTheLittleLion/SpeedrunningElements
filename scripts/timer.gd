@@ -17,7 +17,7 @@ func _on_timer_timeout():
 	print("Time's up! Game over!")
 	game_timer.stop()  # Stop the timer when it ends.
 	timer_label.text = "Game Over!"  # Display "Game Over" on the label.
-	
+	get_tree().change_scene_to_file("res://sceens/gameover.tscn")
 	
 	# Handle game over logic here, such as ending the game or restarting.
 

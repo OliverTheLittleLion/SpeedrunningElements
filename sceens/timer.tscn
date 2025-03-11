@@ -1,16 +1,14 @@
-[gd_scene format=3 uid="uid://b1871r8rfq64s"]
+[gd_scene load_steps=2 format=3 uid="uid://b1871r8rfq64s"]
 
-[node name="Timer" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="Script" path="res://scripts/Timer.gd" id="1_kegcg"]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_right = 189.0
-offset_bottom = 25.0
-text = "Time Left:"
-scroll_active = false
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_kegcg")
+
+[node name="GameTimer" type="Timer" parent="."]
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]

@@ -50,6 +50,11 @@ animations = [{
 "loop": false,
 "name": &"gameover",
 "speed": 1.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [node name="Node2D" type="Node2D"]
@@ -59,7 +64,6 @@ position = Vector2(-0.999907, -3.8147e-06)
 scale = Vector2(12.0125, 10.8)
 sprite_frames = SubResource("SpriteFrames_dij0s")
 animation = &"gameover"
-autoplay = "gameover"
 frame = 5
 frame_progress = 1.0
 
