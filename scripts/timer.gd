@@ -1,7 +1,6 @@
 extends Node2D
 
-@export var game_duration : int = 11  # Game duration in seconds (adjustable in the editor)
-
+@export var game_duration : int = 901  # Game duration in seconds (adjustable in the editor)
 var remaining_time : int
 var game_timer : Timer
 var timer_label : Label  # Reference to the Label node
@@ -12,12 +11,6 @@ func _ready():
 	remaining_time = game_duration  # Set remaining time to game duration.
 	game_timer.start(game_duration)
 
-# This function will be called when the timer finishes.
-func _on_timer_timeout():
-	print("Time's up! Game over!")
-	game_timer.stop()  # Stop the timer when it ends.
-	timer_label.text = "Game Over!"  # Display "Game Over" on the label.
-	get_tree().change_scene_to_file("res://sceens/gameover.tscn")
 	
 	# Handle game over logic here, such as ending the game or restarting.
 
@@ -29,3 +22,5 @@ func _process(delta):
 		timer_label.text = "Time remaining: %d seconds" % remaining_time
 	else:
 		print("Game over!")
+		get_tree().change_scene_to_file("res://sceens/gameover.tscn")
+		

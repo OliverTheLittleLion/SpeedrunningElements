@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cid83t4j4vctn"]
+
+[ext_resource type="Texture2D" uid="uid://bh1gnbl60otwi" path="res://TestScene/assets/PixelFishes/download.jpg" id="1_fewfn"]
+
+[node name="BOO" type="Sprite2D"]
+position = Vector2(343, 124)
+texture = ExtResource("1_fewfn")
