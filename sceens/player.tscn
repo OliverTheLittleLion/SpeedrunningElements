@@ -1,9 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://c182jfsfqlndt"]
+[gd_scene load_steps=26 format=3 uid="uid://c182jfsfqlndt"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_4lkhh"]
 [ext_resource type="Texture2D" uid="uid://djh2p2o63ikwk" path="res://TestScene/assets/AllCatsDemo/EgyptCatFree/IdleCatb.png" id="2_in5rk"]
 [ext_resource type="Texture2D" uid="uid://b1jveamkcjp7x" path="res://TestScene/assets/AllCatsDemo/EgyptCatFree/JumpCabt.png" id="3_n83bn"]
-[ext_resource type="PackedScene" uid="uid://b1871r8rfq64s" path="res://sceens/timer.tscn" id="5_4ka5w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1dqig"]
 radius = 12.0
@@ -164,9 +163,6 @@ animations = [{
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_4lkhh")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_1dqig")
@@ -175,7 +171,3 @@ shape = SubResource("CircleShape2D_1dqig")
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_yaksw")
 animation = &"move"
-
-[node name="Node2D" parent="." instance=ExtResource("5_4ka5w")]
-z_index = 10
-position = Vector2(-237, -133)
