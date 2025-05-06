@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ca4gh2m7b1vi3"]
+[gd_scene load_steps=2 format=3 uid="uid://ca4gh2m7b1vi3"]
 
 [ext_resource type="Script" path="res://Names.gd" id="1_v77je"]
-[ext_resource type="Texture2D" uid="uid://d2olxp0re20as" path="res://pixil-frame-0 (6).png" id="2_16eao"]
 
 [node name="start" type="Control"]
 layout_mode = 3
@@ -50,9 +49,3 @@ offset_left = -23.0
 offset_top = 9.0
 offset_right = 20.0
 offset_bottom = 32.0
-
-[node name="Title" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(-0.000105381, 38.7664)
-scale = Vector2(12, 12.8615)
-texture = ExtResource("2_16eao")

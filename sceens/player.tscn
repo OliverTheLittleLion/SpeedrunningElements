@@ -157,10 +157,10 @@ animations = [{
 }],
 "loop": true,
 "name": &"move",
-"speed": 12.0
+"speed": 10.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="player1" type="CharacterBody2D"]
 script = ExtResource("1_4lkhh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -171,3 +171,4 @@ shape = SubResource("CircleShape2D_1dqig")
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_yaksw")
 animation = &"move"
+frame_progress = 0.45765
