@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1871r8rfq64s"]
+[gd_scene load_steps=2 format=3 uid="uid://do7ng7v8hipnb"]
 
-[ext_resource type="Script" path="res://scripts/Timer.gd" id="1_kegcg"]
+[ext_resource type="Script" path="res://scripts/stopwatch.gd" id="1_njtna"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_kegcg")
+script = ExtResource("1_njtna")
 
 [node name="GameTimer" type="Timer" parent="."]
 

@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca4gh2m7b1vi3"]
+
+[ext_resource type="Script" path="res://Names.gd" id="1_v77je"]
+[ext_resource type="Texture2D" uid="uid://d2olxp0re20as" path="res://pixil-frame-0 (6).png" id="2_16eao"]
+
+[node name="start" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 3.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v77je")
+
+[node name="Player1Nickname" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Player1Nickname"]
+layout_mode = 0
+offset_left = -150.0
+offset_top = -18.0
+offset_right = -110.0
+offset_bottom = 5.0
+
+[node name="Player2Nickname" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 277.0
+offset_top = 82.0
+offset_right = 317.0
+offset_bottom = 122.0
+
+[node name="Label" type="Label" parent="Player2Nickname"]
+layout_mode = 0
+offset_left = -177.0
+offset_top = -99.0
+offset_right = -137.0
+offset_bottom = -76.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ReadyStatus" type="Label" parent="."]
+layout_mode = 0
+offset_left = -30.0
+offset_right = 27.0
+offset_bottom = 23.0
+
+[node name="Title" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-0.000105381, 38.7664)
+scale = Vector2(12, 12.8615)
+texture = ExtResource("2_16eao")
