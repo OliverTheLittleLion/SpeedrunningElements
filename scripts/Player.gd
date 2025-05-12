@@ -1,7 +1,7 @@
 extends CharacterBody2D
 @onready var sprite = $AnimatedSprite2D
 var speed = 200
-var jump_speed = -7500
+var jump_speed = -1700
 var falling_speed = 0.125
 
 

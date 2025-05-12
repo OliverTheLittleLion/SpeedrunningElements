@@ -1,5 +1,8 @@
 extends Control
 
+var p1Start = false
+var p2Start = false
+var gameStarted = false
 const ALPHABET := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var players := {
 	1: {
@@ -13,7 +16,7 @@ var players := {
 		"move_down_action": "p1_down",
 		"move_left_action": "p1_left",
 		"move_right_action": "p1_right",
-		"confirm_action": "p1_start",
+
 		"ready": false  # Player 1 readiness status
 	},
 	2: {
@@ -27,26 +30,18 @@ var players := {
 		"move_down_action": "p2_down",
 		"move_left_action": "p2_left",
 		"move_right_action": "p2_right",
-		"confirm_action": "p2_start",
 		"ready": false  # Player 2 readiness status
 	}
 }
 
 @onready var label1 = $Player1Nickname/Label
 @onready var label2 = $Player2Nickname/Label
-@onready var ready_label = $ReadyStatus  # Label to show Ready/Not Ready status
+
 
 func _ready():
 	players[1]["label_node"] = label1
 	players[2]["label_node"] = label2
-	_update_all_labels()
 
-
-	# Check if both players are ready
-	if players[1]["ready"] and players[2]["ready"]:
-		ready_label.text = "Both players are ready! Press 'Start' to begin."
-	else:
-		ready_label.text = "Waiting for both players to be ready..."
 
 func _handle_input_for_player(player_id):
 	# Get the custom input actions for each player
@@ -54,7 +49,10 @@ func _handle_input_for_player(player_id):
 	var move_down_action = players[player_id]["move_down_action"]
 	var move_left_action = players[player_id]["move_left_action"]
 	var move_right_action = players[player_id]["move_right_action"]
-	var confirm_action = players[player_id]["confirm_action"]
+		# Set cooldown after any action
+	players[player_id]["timer"] = players[player_id]["input_cooldown"]
+
+	
 
 	# Vertical movement (change letter)
 	if Input.is_action_pressed(move_up_action):
@@ -68,11 +66,16 @@ func _handle_input_for_player(player_id):
 	elif Input.is_action_pressed(move_left_action):
 		players[player_id]["current_index"] = max(players[player_id]["current_index"] - 1, 0)
 
+func _input(event):
+	if event.is_action_pressed("p1_start"):
+		p1Start = true
+	if event.is_action_pressed("p2_start"):
+		p2Start = true
 
-	# Toggle ready state (press 'Start' to toggle readiness)
-	if Input.is_action_pressed("p1_start") and Input.is_action_pressed("p2_start"):
+	if p1Start and p2Start and not gameStarted:
 		get_tree().change_scene_to_file("res://sceens/level.tscn")
-
+		gameStarted = true
+		
 func _change_letter(player_id, direction):
 	var idx = players[player_id]["current_index"]
 	var alphabet_idx = players[player_id]["alphabet_index"]
@@ -83,8 +86,15 @@ func _change_letter(player_id, direction):
 func _update_label(player_id):
 	var label = players[player_id]["label_node"]
 	var letters = players[player_id]["selected_letters"]
-	label.text = "P%d Nickname: %s%s" % [player_id, letters[0], letters[1]]
+	var idx = players[player_id]["current_index"]
+	
+	var display = ""
+	for i in range(2):
+		display += "[%s]" % letters[i] if i == idx else letters[i]
+	label.text = "P%d Nickname: %s" % [player_id, display]
 
-func _update_all_labels():
-	for id in players.keys():
-		_update_label(id)
+func _process(delta):
+	for player_id in players.keys():
+		players[player_id]["timer"] -= delta
+		if players[player_id]["timer"] <= 0:
+			_handle_input_for_player(player_id)
