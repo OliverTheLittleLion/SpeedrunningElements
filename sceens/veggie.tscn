@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlem5b51cf8jw"]
+
+[ext_resource type="Texture2D" uid="uid://we5npti1j00y" path="res://TestScene/assets/8bitBroccil.png" id="1_4wstu"]
+[ext_resource type="Script" path="res://scripts/veggie.gd" id="1_f0rgl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6errp"]
+radius = 169.003
+
+[node name="veggie" type="CharacterBody2D"]
+script = ExtResource("1_f0rgl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 3)
+shape = SubResource("CircleShape2D_6errp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9, 3)
+texture = ExtResource("1_4wstu")
