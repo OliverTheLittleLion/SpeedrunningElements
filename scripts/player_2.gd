@@ -38,3 +38,5 @@ func _process(delta):
 
 
 	move_and_slide()
+func kill():
+	print("%s killed!" % name)

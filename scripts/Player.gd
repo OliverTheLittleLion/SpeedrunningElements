@@ -39,18 +39,5 @@ func _process(delta):
 
 
 	move_and_slide()
-var health := 3
-
-func _ready():
-	add_to_group("Player")
-
-func take_damage(amount: int):
-	health -= amount
-	print("Player Health:", health)
-	if health <= 0:
-		die()
-
-func die():
-	print("Player is dead.")
-	queue_free()
-	# Add game over logic here
+func kill():
+	print("%s killed!" % name)

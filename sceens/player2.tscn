@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://lkqven36y45a"]
+[gd_scene load_steps=26 format=3 uid="uid://cdtc7in7h866c"]
 
 [ext_resource type="Script" path="res://scripts/player_2.gd" id="1_i2tye"]
 [ext_resource type="Texture2D" uid="uid://c4g7a5aegnshf" path="res://TestScene/assets/AllCatsDemo/TigerCatFree/IdleCatt.png" id="2_c5n3t"]
