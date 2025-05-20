@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bj4dx0uj3gnj7"]
+[gd_scene load_steps=15 format=4 uid="uid://bj4dx0uj3gnj7"]
 
 [ext_resource type="PackedScene" uid="uid://c182jfsfqlndt" path="res://sceens/player.tscn" id="1_jxvsc"]
 [ext_resource type="Texture2D" uid="uid://dcpgshdgo8uqw" path="res://TestScene/assets/Starter Tiles Platformer/IceSet.png" id="2_t0o6i"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://besvtnkxyntft" path="res://TestScene/assets/Starter Tiles Platformer/FireSet.png" id="5_pxj2y"]
 [ext_resource type="PackedScene" path="res://sceens/player2.tscn" id="6_ysy4v"]
 [ext_resource type="PackedScene" uid="uid://b1871r8rfq64s" path="res://sceens/stopwatch.tscn" id="7_dblw3"]
-[ext_resource type="Script" path="res://scripts/killZone.gd" id="8_3e66b"]
 [ext_resource type="AudioStream" uid="uid://yf2a3om6woyh" path="res://MusicNSounds/1min-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.mp3" id="8_v2fwn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m6ewi"]
@@ -187,7 +186,6 @@ offset_bottom = -180.0
 [node name="KillZone" type="CollisionShape2D" parent="Voidbox"]
 position = Vector2(0, 242)
 shape = SubResource("WorldBoundaryShape2D_3rkf4")
-script = ExtResource("8_3e66b")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-208, -224)
